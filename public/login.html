@@ -1,53 +1,29 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Neon Chat</title>
+    <title>Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="chat-bg">
+<body class="auth-bg">
 
-<!-- HAMBURGER (mobile) -->
-<div class="hamburger" onclick="toggleSidebar()">☰</div>
+    <div class="auth-box">
+        <h2 class="neon-title">Neon Login</h2>
 
-<div class="chat-container">
+        <input id="user" class="input" placeholder="Username">
+        <input id="pass" class="input" type="password" placeholder="Password">
 
-    <!-- LEFT SIDEBAR -->
-    <div class="sidebar">
-        <h2 class="sidebar-title">ONLINE USERS</h2>
-        <div id="online-users" class="online-list"></div>
+        <button class="btn" onclick="login()">Login</button>
+
+        <p class="small-text">
+            No account?
+            <a href="signup.html" class="neon-link">Create one</a>
+        </p>
+
+        <p id="result" class="info"></p>
     </div>
 
-    <!-- GLOBAL CHAT -->
-    <div class="chat-window">
-        <div id="messages" class="messages"></div>
-
-        <div class="input-area">
-            <input id="msgBox" class="chat-input" placeholder="Type a message...">
-            <button class="send-btn" onclick="sendMessage()">Send</button>
-        </div>
-    </div>
-
-    <!-- PRIVATE CHAT PANEL -->
-    <div id="private-panel" class="private-panel hidden">
-
-        <div class="private-header">
-            <span id="private-username"></span>
-            <button class="close-btn" onclick="closePrivateChat()">X</button>
-        </div>
-
-        <div id="private-messages" class="private-messages"></div>
-
-        <div class="private-input-area">
-            <input id="privateMsgBox" class="chat-input" placeholder="Message privately...">
-            <button class="send-btn" onclick="sendPrivate()">Send</button>
-        </div>
-
-    </div>
-
-</div>
-
-<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
-<script src="chat.js"></script>
-
+<script src="login.js"></script>
 </body>
 </html>
