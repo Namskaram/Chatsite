@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-bg">
+
+    <div class="auth-box">
+        <h2 class="neon-title">Create Account</h2>
+
+        <input id="user" class="input" placeholder="Username">
+        <input id="pass" class="input" type="password" placeholder="Password">
+
+        <select id="gender" class="input">
+            <option value="">Select Gender</option>
+            <option value="male">Male ♂️</option>
+            <option value="female">Female ♀️</option>
+            <option value="other">Other ⚧️</option>
+        </select>
+
+        <button class="btn" onclick="signup()">Sign Up</button>
+
+        <p class="small-text">
+            Already have an account?
+            <a href="login.html" class="neon-link">Login</a>
+        </p>
+
+        <p id="result" class="info"></p>
+    </div>
+
+<script src="signup.js"></script>
+</body>
+</html>
+
