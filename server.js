@@ -128,7 +128,19 @@ io.on("connection", (socket) => {
             [data.user, data.room || "global", encrypted.encrypted, encrypted.iv, encrypted.tag]
         );
     });
+
+    socket.on("private", async (data) => {
+        io.emit("privateMsgReceive", data);
+
+        const encrypted = encryptText(JSON.stringify(data));
+
+        await pool.query(
+            "INSERT INTO messages (sender, recipient,type,content, iv,tag) VALUES ($1,$2,'private',$3,$4,$5)",
+            [data.from, data.to, encrypted.encrypted, encrypted.iv, encrypted.tag]
+        );
+    });
 });
+
 
 /* Export endpoint */
 app.post("/export-now", async (req, res) => {
